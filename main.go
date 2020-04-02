@@ -63,26 +63,7 @@ func (p *presence) setRichPresence(s state) {
 
 	switch s.state {
 	case statePlaying:
-		activity := client.Activity{
-			State:      fmt.Sprintf("👤 %v 💿 %v", s.track.artist, s.track.album),
-			Details:    fmt.Sprintf("🎵 %v", s.track.name),
-			LargeImage: imageName(s.track.album),
-			LargeText:  s.track.name,
-		}
-
-		pp, err := strconv.ParseFloat(s.track.playerPosition, 64)
-		if err != nil {
-			fmt.Println(err) // not important error, ignore
-		}
-
-		start := time.Now().Add(-time.Duration(pp) * time.Second)
-
-		activity.Timestamps = &client.Timestamps{
-			Start: &start,
-		}
-		fmt.Printf("set activity %+v", activity)
-		err = client.SetActivity(activity)
-		if err != nil {
+		if err := setActivity(s.track); err != nil {
 			fmt.Println(err)
 		}
 		p.display = true
@@ -95,6 +76,28 @@ func (p *presence) setRichPresence(s state) {
 			}
 		}
 	}
+}
+
+func setActivity(t track) error {
+	activity := client.Activity{
+		State:      fmt.Sprintf("👤 %v 💿 %v", t.artist, t.album),
+		Details:    fmt.Sprintf("🎵 %v", t.name),
+		LargeImage: imageName(t.album),
+		LargeText:  t.name,
+	}
+
+	pp, err := strconv.ParseFloat(t.playerPosition, 64)
+	if err != nil {
+		return err
+	}
+
+	start := time.Now().Add(-time.Duration(pp) * time.Second)
+
+	activity.Timestamps = &client.Timestamps{
+		Start: &start,
+	}
+	fmt.Printf("set activity %+v", activity)
+	return client.SetActivity(activity)
 }
 
 func imageName(album string) string {
