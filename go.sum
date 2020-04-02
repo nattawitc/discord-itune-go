@@ -1,0 +1,8 @@
+github.com/ananagame/rich-go v0.0.0-20200319172754-527649f3d36d h1:A6eLJwlu+zpUBm+iTD9JFT9m3JX0SIALnSutn3LymTs=
+github.com/ananagame/rich-go v0.0.0-20200319172754-527649f3d36d/go.mod h1:U9YxCfeNzWcDUs4O8lQfUyz9txKHTojVykpQicaZhyU=
+github.com/andybrewer/mack v0.0.0-20200226161639-15be3d47cc54 h1:uZMWs9VZiUv6J6gHdlDUA4Y11ckPLe+qYagoHfQb6BY=
+github.com/andybrewer/mack v0.0.0-20200226161639-15be3d47cc54/go.mod h1:unYm1XWSUgGRVv0MaRe3DFEGh2OEcUQ/sFSGxXjXBfI=
+github.com/hugolgst/rich-go v0.0.0-20200319172754-527649f3d36d h1:HYFRni7r+C/z96mu/Ur+JZrcnsCvlA8WEFBEhyGpXH8=
+github.com/hugolgst/rich-go v0.0.0-20200319172754-527649f3d36d/go.mod h1:J5UWekI/HHIt5ID+GVPAW+M19kxXLTFnAdTGDl4mRF0=
+github.com/nattawitc/rich-go v0.0.0-20200402133947-4fcadd738f5b h1:XbxVgEbF+s3Jtq4wKlpvbzxgIYBhmgBiba8l5Gh07DE=
+github.com/nattawitc/rich-go v0.0.0-20200402133947-4fcadd738f5b/go.mod h1:YKl2hK9Pfe1y+D/MwN/XMCcRzGnoTcTPPa58U5DT3NQ=
