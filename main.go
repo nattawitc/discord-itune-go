@@ -8,8 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hugolgst/rich-go/client"
-	"github.com/nattawitc/rich-go/ipc"
+	"github.com/nattawitc/rich-go/client"
 )
 
 const (
@@ -17,7 +16,7 @@ const (
 )
 
 func main() {
-	defer ipc.CloseSocket()
+	defer client.Logout()
 	sChan := make(chan state)
 
 	go func() {
@@ -40,7 +39,6 @@ func main() {
 		select {
 		case s := <-sChan:
 			if !p.oldState.compare(s) {
-				fmt.Println("state change")
 				p.setRichPresence(s)
 			}
 		}
@@ -50,12 +48,11 @@ func main() {
 type presence struct {
 	oldState state
 	once     sync.Once
+	display  bool
 }
 
 func (p *presence) setRichPresence(s state) {
-	fmt.Println("set activity")
 	p.once.Do(func() {
-		fmt.Println("init")
 		err := client.Login(appid)
 		if err != nil {
 			panic(err)
@@ -87,6 +84,15 @@ func (p *presence) setRichPresence(s state) {
 		err = client.SetActivity(activity)
 		if err != nil {
 			fmt.Println(err)
+		}
+		p.display = true
+	default:
+		if p.display {
+			p.display = false
+			err := client.ClearActivity()
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 	}
 }
