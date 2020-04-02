@@ -4,5 +4,7 @@ github.com/andybrewer/mack v0.0.0-20200226161639-15be3d47cc54 h1:uZMWs9VZiUv6J6g
 github.com/andybrewer/mack v0.0.0-20200226161639-15be3d47cc54/go.mod h1:unYm1XWSUgGRVv0MaRe3DFEGh2OEcUQ/sFSGxXjXBfI=
 github.com/nattawitc/rich-go v0.0.0-20200402133947-4fcadd738f5b h1:XbxVgEbF+s3Jtq4wKlpvbzxgIYBhmgBiba8l5Gh07DE=
 github.com/nattawitc/rich-go v0.0.0-20200402133947-4fcadd738f5b/go.mod h1:YKl2hK9Pfe1y+D/MwN/XMCcRzGnoTcTPPa58U5DT3NQ=
+github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 h1:zYyBkD/k9seD2A7fsi6Oo2LfFZAehjjQMERAvZLEDnQ=
+github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646/go.mod h1:jpp1/29i3P1S/RLdc7JQKbRpFeM1dOBd8T9ki5s+AY8=
 gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce h1:+JknDZhAj8YMt7GC73Ei8pv4MzjDUNPHgQWJdtMAaDU=
 gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce/go.mod h1:5AcXVHNjg+BDxry382+8OKon8SEWiKktQR07RKPsv1c=
