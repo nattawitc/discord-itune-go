@@ -96,7 +96,7 @@ func setActivity(t track) error {
 	activity.Timestamps = &client.Timestamps{
 		Start: &start,
 	}
-	fmt.Printf("set activity %+v", activity)
+	fmt.Printf("set activity %+v\n", activity)
 	return client.SetActivity(activity)
 }
 
