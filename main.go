@@ -8,6 +8,8 @@ import (
 	"sync"
 	"time"
 
+	"golang.org/x/text/unicode/norm"
+
 	"github.com/nattawitc/rich-go/client"
 )
 
@@ -102,6 +104,7 @@ func setActivity(t track) error {
 
 func imageName(album string) string {
 	//return album
+	album = norm.NFC.String(album)
 	album = strings.Replace(album, ":", ";", -1)
 
 	h := sha256.New()

@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"golang.org/x/text/unicode/norm"
 )
 
 func main() {
@@ -16,8 +18,10 @@ func main() {
 			return nil
 		}
 
+		path = norm.NFC.String(path)
+
 		h := sha256.New()
-		h.Write([]byte(path))
+		h.Write([]byte(strings.Replace(path, ":", "/", -1)))
 		b := h.Sum(nil)
 		newname := fmt.Sprintf("%x.jpg", b[0:10])
 
